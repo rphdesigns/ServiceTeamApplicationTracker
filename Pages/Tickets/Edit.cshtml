@@ -1,0 +1,100 @@
+﻿@page "{id:int?}"
+@model ServiceTeamApplicationTracker.Pages.Tickets.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Tickets</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Tickets.ID" />
+            <div class="form-group">
+                <label asp-for="Tickets.IncidentOwner" class="control-label">Incident Owner</label>
+                <input asp-for="Tickets.IncidentOwner" class="form-control" />
+                <span asp-validation-for="Tickets.IncidentOwner" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.Application" class="control-label"></label>
+                <input asp-for="Tickets.Application" class="form-control" />
+                <span asp-validation-for="Tickets.Application" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.OpenDate" class="control-label">Open Date</label>
+                <input asp-for="Tickets.OpenDate" class="form-control" />
+                <span asp-validation-for="Tickets.OpenDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.ClosedDate" class="control-label">Closed Date</label>
+                <input asp-for="Tickets.ClosedDate" class="form-control" />
+                <span asp-validation-for="Tickets.ClosedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.Point_of_Contact" class="control-label">Point of Contact</label>
+                <input asp-for="Tickets.Point_of_Contact" class="form-control" />
+                <span asp-validation-for="Tickets.Point_of_Contact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.External_Ticket_Number" class="control-label">External Ticket #</label>
+                <input asp-for="Tickets.External_Ticket_Number" class="form-control" />
+                <span asp-validation-for="Tickets.External_Ticket_Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.AgentName" class="control-label">Agent</label>
+                <input asp-for="Tickets.AgentName" class="form-control" />
+                <span asp-validation-for="Tickets.AgentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.Ticket_Cat" class="control-label">Category</label>
+                <input asp-for="Tickets.Ticket_Cat" class="form-control" />
+                <span asp-validation-for="Tickets.Ticket_Cat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.Ticket_Description" class="control-label">Description</label>
+                <input asp-for="Tickets.Ticket_Description" class="form-control" />
+                <span asp-validation-for="Tickets.Ticket_Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.Resolution_Type" class="control-label">Resolution Type</label>
+                <input asp-for="Tickets.Resolution_Type" class="form-control" />
+                <span asp-validation-for="Tickets.Resolution_Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.Resolution_SubType" class="control-label">Resolution SubType</label>
+                <input asp-for="Tickets.Resolution_SubType" class="form-control" />
+                <span asp-validation-for="Tickets.Resolution_SubType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.Resolution_Description" class="control-label">Resolution Description</label>
+                <input asp-for="Tickets.Resolution_Description" class="form-control" />
+                <span asp-validation-for="Tickets.Resolution_Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.Last_UpdateDate" class="control-label">Last Updated</label>
+                <input asp-for="Tickets.Last_UpdateDate" class="form-control" />
+                <span asp-validation-for="Tickets.Last_UpdateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickets.Work_Notes" class="control-label">Work Notes</label>
+                <input asp-for="Tickets.Work_Notes" class="form-control" />
+                <span asp-validation-for="Tickets.Work_Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

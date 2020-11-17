@@ -1,0 +1,121 @@
+﻿@page "{searchString?}"
+@model ServiceTeamApplicationTracker.Pages.Tickets.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Tickets</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<form>
+    <p>
+        Filter by Application: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter"/>
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].IncidentOwner)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].Application)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].OpenDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].ClosedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].Point_of_Contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].External_Ticket_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].Ticket_Cat)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Tickets[0].Ticket_Description)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].Resolution_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].Resolution_SubType)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Tickets[0].Resolution_Description)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.Tickets[0].Work_Notes)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].Last_UpdateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tickets[0].AgentName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Tickets) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IncidentOwner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Application)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpenDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClosedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Point_of_Contact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.External_Ticket_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ticket_Cat)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Ticket_Description)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Resolution_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resolution_SubType)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Resolution_Description)
+            </td>*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Work_Notes)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Last_UpdateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgentName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

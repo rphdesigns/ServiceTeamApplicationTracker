@@ -1,0 +1,103 @@
+﻿@page "{id:int?}"
+@model ServiceTeamApplicationTracker.Pages.Tickets.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Tickets</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.IncidentOwner)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.IncidentOwner)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.Application)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.Application)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.OpenDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.OpenDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.ClosedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.ClosedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.Point_of_Contact)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.Point_of_Contact)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.External_Ticket_Number)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.External_Ticket_Number)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.Ticket_Cat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.Ticket_Cat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.Ticket_Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.Ticket_Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.Resolution_Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.Resolution_Type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.Resolution_SubType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.Resolution_SubType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.Resolution_Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.Resolution_Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.Last_UpdateDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.Last_UpdateDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.Work_Notes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.Work_Notes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tickets.AgentName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tickets.AgentName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Tickets.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
